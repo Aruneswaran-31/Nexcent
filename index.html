@@ -368,7 +368,11 @@
               <li><a href="#" class="footer__link">Status</a></li>
             </ul>
           </div>
-
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <div class="footer__column">
             <h4 class="footer__subtitle">Stay up to date</h4>
             <form class="footer__form">
@@ -429,6 +433,18 @@
           const next = (currentSlide + 1) % slides.length;
           showSlide(next);
         }, 3000); 
+         
+        const hamburger = document.getElementById('hamburger');
+         const navLinks = document.getElementById('navLinks');
+                  hamburger.addEventListener('click', () => {
+                  navLinks.classList.toggle('active');
+                  });
+                  document.querySelectorAll('.header__nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
       </script>
       
   </body>

@@ -992,4 +992,41 @@
     html {
         scroll-behavior: smooth;
       }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        display: block;
+        transition: all 0.3s ease;
+      }
+      
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+      
+        .header__nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          background: #fff;
+          position: absolute;
+          top: 60px; /* adjust based on header height */
+          left: 0;
+          padding: 1rem;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+      
+        .header__nav-links.active {
+          display: flex;
+        }
+      }
+      
   }
